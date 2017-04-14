@@ -1,0 +1,5 @@
+This is the directory where all the game scripts are stored (Movement.js,Camera.js,Cookiechecker.js)
+
+NOT LEVEL SCRIPTS
+YOU CAN FIND LEVEL SCRIPTS IN THE LEVEL FOLDER
+/levels/01/script.js is a directory example
