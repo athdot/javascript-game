@@ -2,23 +2,17 @@
   <head>
     <title>Level 01</title>    
   </head>
-<body onload="load()" onkeydown="getKey(e)" style="cursor:none; ">
+<body onkeydown="getKey(e)" style="cursor:none; ">
 <input type="text" value="0" id="boi" style="display:none;">
-  <div style="width: 500px; height: 200px;">
 <canvas id="canvas" width="500" height="200" style="position:absolute; top:0;left:0;"></canvas>
-  </div>
 <script>
-  load(){
-   document.getElementById('canvas').setAttribute('width',innerWidth);
-       document.getElementById('canvas').setAttribute('height',innerHeight);
-  }
 var image = new Image(),
     canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d');
 
 image.src = 'https://athdot.github.io/javascript-game/levels/01/level.png';
-var wid = innerWidth-10;
-var hig = innerHeight-10;
+var wid = canvas.width
+var hig = canvas.height
 var imgx = wid
 var imgy = hig
 var centx = (wid-imgx)/2
