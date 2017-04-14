@@ -5,7 +5,7 @@
 <body onload="load()" onkeydown="getKey(e)" style="cursor:none; ">
 <input type="text" value="0" id="boi" style="display:none;">
   <div style="width: 500px; height: 200px;">
-<canvas id="canvas" width="innerWidth" height="innerHeight" style="position:absolute; top:0;left:0;"></canvas>
+<canvas id="canvas" style="position:absolute; top:0;left:0; width: 500px; height: 200px;"></canvas>
   </div>
 <script>
 var image = new Image(),
@@ -13,8 +13,8 @@ var image = new Image(),
     ctx = canvas.getContext('2d');
 
 image.src = 'https://athdot.github.io/javascript-game/levels/01/level.png';
-var wid = document.getElementById('canvas').width;
-var hig = document.getElementById('canvas').height;
+var wid = document.getElementById('canvas').style.width;
+var hig = document.getElementById('canvas').style.height;
 var imgx = wid
 var imgy = hig
 var centx = (wid-imgx)/2
