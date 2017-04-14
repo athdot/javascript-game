@@ -8,13 +8,17 @@
 <canvas id="canvas" width="500" height="200" style="position:absolute; top:0;left:0;"></canvas>
   </div>
 <script>
+  load(){
+   document.getElementById('canvas').setAttribute('width',innerWidth);
+       document.getElementById('canvas').setAttribute('height',innerHeight);
+  }
 var image = new Image(),
     canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d');
 
 image.src = 'https://athdot.github.io/javascript-game/levels/01/level.png';
-var wid = document.getElementById('canvas').width;
-var hig = document.getElementById('canvas').height;
+var wid = innerWidth;
+var hig = innerHeight;
 var imgx = wid
 var imgy = hig
 var centx = (wid-imgx)/2
