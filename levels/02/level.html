@@ -2,10 +2,19 @@
   <head>
     <title>Level 02</title>    
   </head>
-<body onload="load()" onkeydown="getKey(e)">
+<body onload="load()" onkeydown="getKey(e)" onresize="res()" style="background-color: black;">
   <input type="text" value="0" id="boi" style="display:none;"></input>
-<canvas id="canvas" style="position:absolute; top:0; left: 0; width: 100%; height: 100vh; cursor:none;"></canvas>
+<div id="size" style="width: 700px; height: 500px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%; ">
+<canvas id="canvas" style="position:absolute; height: 100%; width: 100%; cursor:none;"></canvas>
+</div>
 <script>
+if(innerWidth > innerHeight){
+document.getElementById('size').style = 'height: ' + innerHeight +'px; width: 700px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%;'
+document.getElementById('size').style.width = ((document.getElementById('size').style.height).substring(0,((document.getElementById('size').style.height).length)-2)*(7/5)+'px')
+}else{
+document.getElementById('size').style = 'width: ' + innerWidth +'px; height: 700px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%;'
+document.getElementById('size').style.height = ((document.getElementById('size').style.width).substring(0,((document.getElementById('size').style.width).length)-2)*(5/7)+'px')
+}
 var image = new Image(),
     canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d');
@@ -14,13 +23,13 @@ var wid = document.getElementById('canvas').width;
 var hig = document.getElementById('canvas').height;
 var imgx = wid
 var imgy = hig
-var centx = (wid-imgx)/2
-var centy = (hig-imgy)/2
+var centx = 0
+var centy = 0
 var sidescroll = parseInt(document.getElementById('boi').value);
 function load(){
     ctx.drawImage(image,
-        sidescroll, 100,   // Start at 70/20 pixels from the left and the top of the image (crop),
-        300, 200,   // "Get" a `50 * 50` (w * h) area from the source image (crop),
+        sidescroll, 200,   // Start at 70/20 pixels from the left and the top of the image (crop),
+        300, 100,   // "Get" a `50 * 50` (w * h) area from the source image (crop),
         centx, centy,     // Place the result at 0, 0 in the canvas,
         imgx, imgy); // With as width / height: 100 * 100 (scale)
 };
@@ -29,7 +38,7 @@ var k = e.keyCode
     if(k == 68) {
         document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)+2));
 var sidescroll = parseInt(document.getElementById('boi').value);
-    ctx.drawImage(image,sidescroll, 100, 300, 200, centx, centy, imgx, imgy);
+    ctx.drawImage(image,sidescroll, 200, 300, 100, centx, centy, imgx, imgy);
     }else if(k == 65){
         document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)-2));
 var sidescroll = parseInt(document.getElementById('boi').value);
@@ -37,6 +46,15 @@ var sidescroll = parseInt(document.getElementById('boi').value);
 }
 }
 document.onkeydown = getKey;
+function res(){
+if(innerWidth > innerHeight){
+document.getElementById('size').style = 'height: ' + innerHeight +'px; width: 700px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%;'
+document.getElementById('size').style.width = ((document.getElementById('size').style.height).substring(0,((document.getElementById('size').style.height).length)-2)*(7/5)+'px')
+}else{
+document.getElementById('size').style = 'width: ' + innerWidth +'px; height: 700px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%;'
+document.getElementById('size').style.height = ((document.getElementById('size').style.width).substring(0,((document.getElementById('size').style.width).length)-2)*(5/7)+'px')
+}
+}
 </script>
 </body>
 </html>
