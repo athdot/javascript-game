@@ -19,10 +19,14 @@ function res(){
 if(innerWidth > innerHeight){
 document.getElementById('size').style = 'height: ' + innerHeight +'px; width: 700px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%;'
 document.getElementById('size').style.width = ((document.getElementById('size').style.height).substring(0,((document.getElementById('size').style.height).length)-2)*(7/5)+'px')
+}else if(((document.getElementById('size').style.width).substring(0,document.getElementById('size').length)) < innerWidth){
+document.getElementById('size').style = 'width: ' + innerWidth +'px; height: 700px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%;'
+document.getElementById('size').style.height = ((document.getElementById('size').style.width).substring(0,((document.getElementById('size').style.width).length)-2)*(5/7)+'px')
 }else{
 document.getElementById('size').style = 'width: ' + innerWidth +'px; height: 700px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%;'
 document.getElementById('size').style.height = ((document.getElementById('size').style.width).substring(0,((document.getElementById('size').style.width).length)-2)*(5/7)+'px')
 }
+
 }
 </script>
 </body>
