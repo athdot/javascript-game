@@ -1,5 +1,27 @@
 <html>
-  <body style="background-color: grey;">
+      <style>
+      img { position: absolute; width: 300%; height: 300vh; 
+position:fixed;
+top: -400px;
+left: -400px;
+  -moz-animation: 20s rotate infinite linear  ;
+  -moz-transform-origin: 50% 50%; 
+  -webkit-animation: 20s rotate infinite linear  ;
+  -webkit-transform-origin: 50% 50%;  
+}
 
+@-moz-keyframes rotate {
+    0    { -moz-transform: rotate(0); } 
+    100% { -moz-transform: rotate(360deg); }  
+}
+
+@-webkit-keyframes rotate {
+    0%    { -webkit-transform: rotate(0); }
+    100% { -webkit-transform: rotate(360deg); } 
+}
+
+    </style>
+  <body style="background-color: grey;">
+<img src="https://athdot.github.io/javascript-game/levels/01/spac.png">
   </body>
 </html>
