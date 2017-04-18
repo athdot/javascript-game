@@ -37,7 +37,7 @@ function getCookie(cname) {
     var url = ('https://athdot.github.io/javascript-game/levels/' + level + '/level.html');
 document.getElementById('cookie').src = url;
     } else {
-       user = "01"
+       user = "02"
            var level=user
                var url = ('https://athdot.github.io/javascript-game/levels/' + level + '/level.html');
 document.getElementById('cookie').src = url
