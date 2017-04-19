@@ -59,7 +59,7 @@ var centy = 0
 var sidescroll = parseInt(document.getElementById('boi').value);
 function load(){
     ctx.drawImage(image,
-        sidescroll, 100,   // Start at 70/20 pixels from the left and the top of the image (crop),
+        sidescroll, 0,   // Start at 70/20 pixels from the left and the top of the image (crop),
         300, 200,   // "Get" a `50 * 50` (w * h) area from the source image (crop),
         centx, centy,     // Place the result at 0, 0 in the canvas,
         imgx, imgy); // With as width / height: 100 * 100 (scale)
