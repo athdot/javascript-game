@@ -2,7 +2,7 @@
   <head>
     <title>Level 02</title>    
   </head>
-<body onload="load()" onkeydown="getKey(e)" onresize="res()" style="background-color: black;">
+<body onload="load()" onkeydown="getKey" onresize="res()" style="background-color: black;">
   <input type="text" value="0" id="boi" style="display:none;"></input>
 <div id="size" style="width: 700px; height: 500px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%; ">
 <canvas id="canvas" style="position:absolute; height: 100%; width: 100%; cursor:none; border: 1px solid white;"></canvas>
@@ -66,6 +66,7 @@ function load(){
 };
 function getKey(e){
 var k = e.keyCode
+context.clearRect(0, 0, canvas.width, canvas.height);
     if(k == 68) {
         document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)+2));
 var sidescroll = parseInt(document.getElementById('boi').value);
