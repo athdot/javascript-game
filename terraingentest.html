@@ -1,47 +1,69 @@
 <body>
 <script>
-var hai = Math.floor((Math.random() * 15) + 10);; //world width in canvas'
+var granmoe = 0;
+var hai = 3;
 var runnin = 0;
 while(runnin != hai){
-var can = document.createElement("canvas");
-can.id = "canvasite"
-can.style = "width: 150px; height: 75px;"
-document.body.appendChild(can);
-c = document.getElementById('canvasite'),
+	var can = document.createElement("canvas");
+	can.id = "canvasite"
+	can.style = "width: 150px; height: 100px; display:none;"
+	document.body.appendChild(can);
+	c = document.getElementById('canvasite'),
     ctx = c.getContext('2d');
     var x = 0
     if(runnin == 0){
-var endheight = c.height/2
-}
+		var endheight = c.height/2
+	}
     var y = endheight;
-var widd = 0
-while(widd != c.width){
-    ctx.fillStyle = "rgba("+0+","+255+","+0+","+(255/255)+")";
-ctx.fillRect( x, y, 1, 1 );
-var ychan = Math.floor((Math.random() * 6) + 1);
-if(ychan == 1){
-var y=y+2
-}else if(ychan == 2){
-var y=y+1
-}else if(ychan == 3){
-var y=y-1
-}else if(ychan == 4){
-var y=y-2
-}else{
-var y=y
+	var widd = 0
+	while(widd != c.width){
+    	ctx.fillStyle = "rgba("+0+","+255+","+0+","+(255/255)+")";
+		ctx.fillRect( x, y, 1, 1 );
+		var ychan = Math.floor((Math.random() * 6) + 1);
+		if(ychan == 1){
+			var y=y+2
+		}else if(ychan == 2){
+			var y=y+1
+		}else if(ychan == 3){
+			var y=y-1
+		}else if(ychan == 4){
+			var y=y-2
+		}else{
+			var y=y
+		}
+		var hig = y
+		while(hig != c.height){
+    		ctx.fillStyle = "rgba("+0+","+255+","+0+","+(255/255)+")";
+			ctx.fillRect( x, hig, 1, 1 );
+			var hig = hig+1
+		}
+		var widd = widd+1
+		var x=x+1
+	}
+    {
+	var endheight = y
+	var runnin = runnin+1
+	document.getElementById('canvasite').setAttribute('id','nAn')
+	var imgm = document.createElement("img");
+	imgm.src = c.toDataURL();
+    imgm.id = "imageitem"
+    imgm.style = "display:none;"
+	document.body.appendChild(imgm)
+	var xid = granmoe*(300*(1/hai));
+	if(granmoe == 0){
+		var cansfoo = document.createElement("canvas")
+		cansfoo.id = "fullimage";
+		cansfoo.style = 'width: '+(hai*150)+'px; height: 75px;'
+		document.body.appendChild(cansfoo);
+	}
+	var ci=document.getElementById("fullimage");
+	var ctxi=ci.getContext("2d");
+	var imd=document.getElementById("imageitem");
+	ctxi.drawImage(imd,xid,0,(300*(1/hai)),180);
+	//end
+	var granmoe=granmoe+1
+	document.getElementById("imageitem").setAttribute('id','non');
 }
-var hig = y
-while(hig != c.height){
-    ctx.fillStyle = "rgba("+0+","+255+","+0+","+(255/255)+")";
-ctx.fillRect( x, hig, 1, 1 );
-var hig = hig+1
-}
-var widd = widd+1
-var x=x+1
-}
-var endheight = y
-var runnin = runnin+1
-document.getElementById('canvasite').setAttribute('id','nAn')
 }
 </script>
 </body>
