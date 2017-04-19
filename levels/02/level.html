@@ -1,8 +1,9 @@
+
 <html>
   <head>
     <title>Level 02</title>    
   </head>
-<body onload="load()" onkeydown="getKey(e)" onresize="res()" style="background-color: black;">
+<body onload="load()" onresize="res()" style="background-color: black;">
   <input type="text" value="0" id="boi" style="display:none;"></input>
 <div id="size" style="width: 700px; height: 500px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%; ">
 <canvas id="canvas" style="position:absolute; height: 100%; width: 100%; cursor:none;"></canvas>
@@ -60,7 +61,7 @@ var sidescroll = parseInt(document.getElementById('boi').value);
 function load(){
     ctx.drawImage(image,
         sidescroll, 0,   // Start at 70/20 pixels from the left and the top of the image (crop),
-        300, 200,   // "Get" a `50 * 50` (w * h) area from the source image (crop),
+        150, 100,   // "Get" a `50 * 50` (w * h) area from the source image (crop),
         centx, centy,     // Place the result at 0, 0 in the canvas,
         imgx, imgy); // With as width / height: 100 * 100 (scale)
 };
@@ -68,14 +69,14 @@ function getKey(e){
 var k = e.keyCode
     if(k == 68) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-        document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)+2));
+        document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)+1));
 var sidescroll = parseInt(document.getElementById('boi').value);
-    ctx.drawImage(image,sidescroll, 0, 300, 200, centx, centy, imgx, imgy);
+    ctx.drawImage(image,sidescroll, 0, 150, 100, centx, centy, imgx, imgy);
     }else if(k == 65){
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-        document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)-2));
+        document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)-1));
 var sidescroll = parseInt(document.getElementById('boi').value);
-    ctx.drawImage(image,sidescroll, 0, 300, 200, centx, centy, imgx, imgy);
+    ctx.drawImage(image,sidescroll, 0, 150, 100, centx, centy, imgx, imgy);
 }
 }
 document.onkeydown = getKey;
