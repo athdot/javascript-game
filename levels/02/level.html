@@ -69,11 +69,11 @@ var k = e.keyCode
     if(k == 68) {
         document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)+2));
 var sidescroll = parseInt(document.getElementById('boi').value);
-    ctx.drawImage(image,sidescroll, 100, 300, 200, centx, centy, imgx, imgy);
+    ctx.drawImage(image,sidescroll, 0, 300, 200, centx, centy, imgx, imgy);
     }else if(k == 65){
         document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)-2));
 var sidescroll = parseInt(document.getElementById('boi').value);
-    ctx.drawImage(image,sidescroll, 100, 300, 200, centx, centy, imgx, imgy);
+    ctx.drawImage(image,sidescroll, 0, 300, 200, centx, centy, imgx, imgy);
 }
 }
 document.onkeydown = getKey;
