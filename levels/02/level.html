@@ -5,7 +5,7 @@
 <body onload="load()" onkeydown="getKey(e)" onresize="res()" style="background-color: black;">
   <input type="text" value="0" id="boi" style="display:none;"></input>
 <div id="size" style="width: 700px; height: 500px; position:absolute; transform:translate(-50%,-50%); top:50%; left: 50%; ">
-<canvas id="canvas" style="position:absolute; height: 100%; width: 100%; cursor:none; border: 1px solid white;"></canvas>
+<canvas id="canvas" style="position:absolute; height: 100%; width: 100%; cursor:none;"></canvas>
 </div>
 <canvas id="canvasite" style="position:fixed; display:none;"></canvas>
 <script>
@@ -66,12 +66,13 @@ function load(){
 };
 function getKey(e){
 var k = e.keyCode
-ctx.clearRect(0, 0, canvas.width, canvas.height);
     if(k == 68) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
         document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)+2));
 var sidescroll = parseInt(document.getElementById('boi').value);
     ctx.drawImage(image,sidescroll, 0, 300, 200, centx, centy, imgx, imgy);
     }else if(k == 65){
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
         document.getElementById('boi').setAttribute('value',(parseInt(document.getElementById('boi').value)-2));
 var sidescroll = parseInt(document.getElementById('boi').value);
     ctx.drawImage(image,sidescroll, 0, 300, 200, centx, centy, imgx, imgy);
