@@ -1,0 +1,1 @@
+Store png's for texture's in here so the file reader can read the heightmap and generate the terrain.
