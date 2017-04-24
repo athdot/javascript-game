@@ -24,12 +24,14 @@ document.getElementById('mate').setAttribute('width',updatedw);
 //Get RGBA value of pixel
 //Get its coordinates, scale it to map drawing.
 var searchx = 0;
+    var imgsearchx = 0;
+        var imgsearchy = 0;
 var ups = document.getElementById('mate').width;
 var searchy = document.getElementById('mate').height;
 while(searchx < ups){
     var runth = 0;
     while(runth < searchy){
-        data = context.getImageData(10, 99, 1, 1).data;
+        data = context.getImageData(imgsearchx, imgsearchy, 1, 1).data;
         var data = data+''
         if((data) === "0,255,0,255"){
         //include color sensor and image maker here
@@ -38,12 +40,15 @@ while(searchx < ups){
         cex.drawImage(img,searchx,runth,32,32);
         img.src = "https://athdot.github.io/javascript-game/textures/Grass.png";
                     var runth = runth+32
+                        var imgsearchy = imgsearchy+1;
         //yaaaaaaaay
     }else{
         var runth = runth+32
+                                var imgsearchy = imgsearchy+1;
         }
     }
     var searchx=searchx+32
+   var imgsearchx = imgsearchx+1;
 }
 }
        }
