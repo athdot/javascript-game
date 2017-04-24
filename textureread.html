@@ -24,15 +24,15 @@ document.getElementById('mate').setAttribute('width',updatedw);
 //Get RGBA value of pixel
 //Get its coordinates, scale it to map drawing.
 var searchx = 0;
-    var imgsearchx = 2000;
+    var imgsearchx = 0;
         var imgsearchy = 0;
 var ups = document.getElementById('mate').width;
 var searchy = document.getElementById('mate').height;
 while(searchx < ups){
     var runth = 0;
     while(runth < searchy){
-        data = chuck.getImageData(imgsearchx, imgsearchy, 1, 1).data;
-        var data = data+''
+        data = chuck.getImageData( imgsearchx, imgsearchy, 1, 1).data;
+        var data = data.toString();
         if((data) === "0,255,0,255"){
         //include color sensor and image maker here
         var ced = document.getElementById('mate');
@@ -47,7 +47,7 @@ while(searchx < ups){
                                 var imgsearchy = imgsearchy+1;
         }
     }
-    var searchx=searchx+32
+    var searchx=searchx+32;
     var imgsearchx = imgsearchx+1;
 }
 }
