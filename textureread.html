@@ -9,8 +9,8 @@ function getMeta(varA, varB) {
        img.onload = function() {
            var widdi = this.width;
            var heidi = this.height;
-           var updatedw = widdi*64
-           var updatedh = heidi*64
+           var updatedw = widdi*32
+           var updatedh = heidi*32
 //set width and height of canvas. Prep for adding image
 document.getElementById('mate').setAttribute('height',updatedh);
 document.getElementById('mate').setAttribute('width',updatedw);
@@ -27,7 +27,7 @@ while(searchx < ups){
         //include color sensor and image maker here
         var ced = document.getElementById('mate');
         var cex = ced.getContext('2d');
-        cex.drawImage(img,searchx,runth,64,64);
+        cex.drawImage(img,searchx,runth,32,32);
         img.src = "https://athdot.github.io/javascript-game/textures/Stone.png";
         //yaaaaaaaay
         var runth = runth+64
