@@ -30,7 +30,8 @@ while(searchx < ups){
     var runth = 0;
     while(runth < searchy){
         data = context.getImageData(10, 99, 1, 1).data;
-        if((data.toString()) === "0,255,0,255"){
+        var data = data+''
+        if((data) === "0,255,0,255"){
         //include color sensor and image maker here
         var ced = document.getElementById('mate');
         var cex = ced.getContext('2d');
